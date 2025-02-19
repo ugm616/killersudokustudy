@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_DIGITS = 9;
     let chart = null;
 
+    // DOM Elements
+    const modal = document.getElementById('customModal');
+    const closeButton = document.querySelector('.close-button');
+    const applyButton = document.getElementById('applySelections');
+
     // Generate combinations function (same as before)
     function generateCombinations(cellCount, total) {
         const results = [];
@@ -71,13 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            datasets.push({
-                label: `${digit} Digits`,
-                data: values,
-                borderColor: getColor(digit),
-                backgroundColor: getColor(digit, 0.1),
-                tension: 0.4
-            });
+            if (values.length > 0) {
+                datasets.push({
+                    label: `${digit} Digits`,
+                    data: values,
+                    borderColor: getColor(digit),
+                    backgroundColor: getColor(digit, 0.1),
+                    tension: 0.4
+                });
+            }
         });
 
         // Create new chart
@@ -154,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('label');
             label.className = 'checkbox-label';
             label.innerHTML = `
-                <input type="checkbox" class="digit-checkbox" value="${i}" checked>
+                <input type="checkbox" class="digit-checkbox" value="${i}">
                 ${i} Digits
             `;
             digitControls.appendChild(label);
@@ -165,17 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('label');
             label.className = 'checkbox-label';
             label.innerHTML = `
-                <input type="checkbox" class="sum-checkbox" value="${i}" checked>
+                <input type="checkbox" class="sum-checkbox" value="${i}">
                 Sum ${i}
             `;
             sumControls.appendChild(label);
         }
-
-        // Add event listeners
-        const checkboxes = document.querySelectorAll('.digit-checkbox, .sum-checkbox');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateCustomView);
-        });
     }
 
     // Update chart based on selections
@@ -186,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(cb => cb.value);
         
         createChart(dataset, selectedDigits, selectedSums);
+        modal.style.display = 'none';
     }
 
     // Initialize
@@ -193,18 +195,28 @@ document.addEventListener('DOMContentLoaded', () => {
     setupControls(dataset);
     createChart(dataset);
 
-    // View toggle handlers
+    // Event Listeners
     document.getElementById('showAllBtn').addEventListener('click', (e) => {
-        document.getElementById('customControls').style.display = 'none';
         document.getElementById('showCustomBtn').classList.remove('active');
         e.target.classList.add('active');
         createChart(dataset);
     });
 
     document.getElementById('showCustomBtn').addEventListener('click', (e) => {
-        document.getElementById('customControls').style.display = 'grid';
         document.getElementById('showAllBtn').classList.remove('active');
         e.target.classList.add('active');
-        updateCustomView();
+        modal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    applyButton.addEventListener('click', updateCustomView);
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
     });
 });
