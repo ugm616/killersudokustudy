@@ -107,10 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             display: true,
                             text: 'Sum Total',
                             color: '#fff3e0',
-                            padding: { bottom: 0 }
+                            padding: { bottom: -5 },
+                            font: {
+                                size: 11
+                            }
                         },
                         ticks: {
-                            color: '#fff3e0'
+                            color: '#fff3e0',
+                            font: {
+                                size: 10
+                            },
+                            padding: 0
                         },
                         grid: {
                             color: 'rgba(255, 243, 224, 0.1)'
@@ -121,10 +128,17 @@ document.addEventListener('DOMContentLoaded', () => {
                             display: true,
                             text: 'Number of Combinations',
                             color: '#fff3e0',
-                            padding: { top: 0 }
+                            padding: { top: -5 },
+                            font: {
+                                size: 11
+                            }
                         },
                         ticks: {
-                            color: '#fff3e0'
+                            color: '#fff3e0',
+                            font: {
+                                size: 10
+                            },
+                            padding: 0
                         },
                         grid: {
                             color: 'rgba(255, 243, 224, 0.1)'
@@ -135,19 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     legend: {
                         labels: {
                             color: '#fff3e0',
-                            padding: 5
+                            padding: 2,
+                            font: {
+                                size: 11
+                            }
                         },
                         position: 'top',
                         align: 'start'
                     }
                 },
                 layout: {
-                    padding: {
-                        top: 5,
-                        right: 5,
-                        bottom: 5,
-                        left: 5
-                    }
+                    padding: 0
                 }
             }
         });
