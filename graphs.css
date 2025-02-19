@@ -6,6 +6,7 @@ main {
     height: calc(100vh - 50px); /* Account for nav bar */
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 h1 {
@@ -19,7 +20,7 @@ h1 {
     flex-direction: column;
     gap: 0.5rem;
     padding: 0;
-    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
 }
 
 /* Graph controls */
@@ -58,7 +59,13 @@ h1 {
     padding: 0.5rem;
     background-color: rgba(26, 26, 26, 0.3);
     border-radius: 8px;
-    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#combinationsGraph {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* Modal Styles */
