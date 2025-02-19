@@ -3,7 +3,7 @@
     max-width: 100%;
     margin: 0;
     padding: 0.25rem;
-    height: calc(100vh - 50px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -17,15 +17,17 @@
     padding: 0;
     overflow: hidden;
     margin: 0;
+    height: calc(100vh - 60px);
 }
 
 /* Graph controls */
 .graph-controls {
-    margin: 0;
+    margin: 0 auto;
     padding: 0.15rem;
     background-color: rgba(26, 26, 26, 0.3);
     border-radius: 8px;
-    min-height: auto;
+    width: 95%;
+    height: auto;
 }
 
 .view-selector {
@@ -59,12 +61,14 @@
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    max-height: calc(100vh - 160px);
+    height: calc(100vh - 100px);
+    min-height: 400px;
 }
 
 #combinationsGraph {
     width: 100% !important;
     height: 100% !important;
+    max-height: 100% !important;
 }
 
 /* Modal Styles */
