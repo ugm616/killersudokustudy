@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer Sudoku Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-menu">
+        <div class="nav-content">
+            <a href="index.html" class="active">Cage Calculator</a>
+            <a href="about.html">About</a>
+            <a href="rules.html">Sudoku Rules</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Killer Sudoku Cage Calculator</h1>
+        
+        <div class="calculator-container">
+            <div class="calculator-form">
+                <form id="cageForm">
+                    <div class="form-group">
+                        <label for="cellCount">Number of cells in cage:</label>
+                        <input type="number" id="cellCount" name="cellCount" min="1" max="9" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cageTotal">Cage total:</label>
+                        <input type="number" id="cageTotal" name="cageTotal" min="1" max="45" required>
+                    </div>
+
+                    <button type="submit">Find Combinations</button>
+                </form>
+            </div>
+
+            <div id="results" class="results">
+                <h2>Possible Combinations</h2>
+                <div id="combinations-list" class="combinations-list">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Filter Combinations</h3>
+                <div class="number-filter">
+                    <label for="excludeNumbers">Exclude numbers (separate by spaces):</label>
+                    <input type="text" id="excludeNumbers" placeholder="e.g., 1 4 7">
+                    <button id="applyFilter">Apply Filter</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
