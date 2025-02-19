@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 maintainAspectRatio: false,
                 resizeDelay: 0,
                 animation: {
-                    duration: 0 // Disable animations for smoother resizing
+                    duration: 0
                 },
                 scales: {
                     x: {
@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         title: {
                             display: true,
                             text: 'Sum Total',
-                            color: '#fff3e0'
+                            color: '#fff3e0',
+                            padding: { bottom: 0 }
                         },
                         ticks: {
                             color: '#fff3e0'
@@ -119,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         title: {
                             display: true,
                             text: 'Number of Combinations',
-                            color: '#fff3e0'
+                            color: '#fff3e0',
+                            padding: { top: 0 }
                         },
                         ticks: {
                             color: '#fff3e0'
@@ -132,16 +134,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 plugins: {
                     legend: {
                         labels: {
-                            color: '#fff3e0'
-                        }
+                            color: '#fff3e0',
+                            padding: 5
+                        },
+                        position: 'top',
+                        align: 'start'
                     }
                 },
                 layout: {
                     padding: {
-                        top: 10,
-                        right: 10,
-                        bottom: 10,
-                        left: 10
+                        top: 5,
+                        right: 5,
+                        bottom: 5,
+                        left: 5
                     }
                 }
             }
