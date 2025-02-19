@@ -12,15 +12,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<nav class="top-menu">
-    <div class="nav-content">
-        <a href="index.html">Cage Calculator</a>
-        <a href="combinations-chart.html">Combinations Chart</a>
-        <a href="combinations-graphs.html" class="active">Combinations Graph</a>
-        <a href="rules.html">Sudoku Rules</a>
-        <a href="about.html">About</a>
-    </div>
-</nav>
+    <nav class="top-menu">
+        <div class="nav-content">
+            <a href="index.html">Cage Calculator</a>
+            <a href="combinations-chart.html">Combinations Chart</a>
+            <a href="combinations-graphs.html" class="active">Combinations Graph</a>
+            <a href="rules.html">Sudoku Rules</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
 
     <main>
         <h1>Killer Sudoku Combination Graphs</h1>
@@ -31,22 +31,6 @@
                     <button id="showAllBtn" class="active">Show All Data</button>
                     <button id="showCustomBtn">Custom Selection</button>
                 </div>
-
-                <div id="customControls" class="custom-controls" style="display: none;">
-                    <div class="control-section">
-                        <h3>Select by Digit Count</h3>
-                        <div class="checkbox-group" id="digitControls">
-                            <!-- Will be filled by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div class="control-section">
-                        <h3>Select by Sum Total</h3>
-                        <div class="checkbox-group" id="sumControls">
-                            <!-- Will be filled by JavaScript -->
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="graph-container">
@@ -54,6 +38,34 @@
             </div>
         </div>
     </main>
+
+    <!-- Custom Selection Modal -->
+    <div id="customModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Custom Selection</h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="control-section">
+                    <h3>Select by Digit Count</h3>
+                    <div class="checkbox-group" id="digitControls">
+                        <!-- Will be filled by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>Select by Sum Total</h3>
+                    <div class="checkbox-group" id="sumControls">
+                        <!-- Will be filled by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="applySelections">Apply</button>
+            </div>
+        </div>
+    </div>
 
     <script src="graphs.js"></script>
 </body>
