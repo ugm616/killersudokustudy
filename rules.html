@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules - Killer Sudoku Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-menu">
+        <div class="nav-content">
+            <a href="index.html">Cage Calculator</a>
+            <a href="about.html">About</a>
+            <a href="rules.html" class="active">Sudoku Rules</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Killer Sudoku Rules</h1>
+        
+        <div class="content-container">
+            <section class="rules-section">
+                <h2>Basic Rules</h2>
+                <p>Killer Sudoku combines regular Sudoku rules with additional constraints from cages and their sums. Here are the fundamental rules:</p>
+                
+                <h3>Standard Sudoku Rules</h3>
+                <ul>
+                    <li>Fill the 9×9 grid with numbers 1-9</li>
+                    <li>Each row must contain numbers 1-9 without repetition</li>
+                    <li>Each column must contain numbers 1-9 without repetition</li>
+                    <li>Each 3×3 box must contain numbers 1-9 without repetition</li>
+                </ul>
+            </section>
+
+            <section class="rules-section">
+                <h2>Killer Sudoku Additional Rules</h2>
+                <ul>
+                    <li>The grid is divided into "cages" (irregular shapes outlined with dotted lines)</li>
+                    <li>Each cage has a small number in the top-left corner showing the sum of all numbers in that cage</li>
+                    <li>Numbers cannot repeat within a cage</li>
+                    <li>All numbers in a cage must sum to the given total</li>
+                </ul>
+            </section>
+
+            <section class="rules-section">
+                <h2>Common Strategies</h2>
+                <h3>1. Cage Analysis</h3>
+                <p>Look for cages with unique combinations. For example:</p>
+                <ul>
+                    <li>A cage of 2 cells summing to 3 must be 1,2</li>
+                    <li>A cage of 2 cells summing to 17 must be 8,9</li>
+                    <li>A single-cell cage can only be that number</li>
+                </ul>
+
+                <h3>2. Cross-Referencing</h3>
+                <p>Combine cage totals with standard Sudoku rules to eliminate possibilities:</p>
+                <ul>
+                    <li>Check what numbers are already used in rows/columns/boxes</li>
+                    <li>Use the cage calculator to find possible combinations</li>
+                    <li>Eliminate combinations that would break Sudoku rules</li>
+                </ul>
+            </section>
+
+            <section class="rules-section">
+                <h2>Using This Calculator</h2>
+                <p>This calculator helps you find possible combinations for cages. To use it effectively:</p>
+                <ol>
+                    <li>Identify the cage you want to analyze</li>
+                    <li>Count the number of cells in the cage</li>
+                    <li>Note the sum shown in the cage's corner</li>
+                    <li>Use the calculator to find possible combinations</li>
+                    <li>Use the filter to remove numbers that are already present in the same row, column, or 3×3 box</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
