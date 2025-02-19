@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.close-button');
     const applyButton = document.getElementById('applySelections');
 
-    // Generate combinations function (same as before)
+    // Generate combinations function
     function generateCombinations(cellCount, total) {
         const results = [];
         
@@ -96,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                resizeDelay: 0,
+                animation: {
+                    duration: 0 // Disable animations for smoother resizing
+                },
                 scales: {
                     x: {
                         type: 'linear',
@@ -131,6 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             color: '#fff3e0'
                         }
                     }
+                },
+                layout: {
+                    padding: {
+                        top: 10,
+                        right: 10,
+                        bottom: 10,
+                        left: 10
+                    }
                 }
             }
         });
@@ -161,7 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('label');
             label.className = 'checkbox-label';
             label.innerHTML = `
-                <input type="checkbox" class="digit-checkbox" value="${i}">
+                <input type="checkbox" 
+                       id="digit${i}" 
+                       name="digit${i}" 
+                       class="digit-checkbox" 
+                       value="${i}">
                 ${i} Digits
             `;
             digitControls.appendChild(label);
@@ -172,7 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('label');
             label.className = 'checkbox-label';
             label.innerHTML = `
-                <input type="checkbox" class="sum-checkbox" value="${i}">
+                <input type="checkbox" 
+                       id="sum${i}" 
+                       name="sum${i}" 
+                       class="sum-checkbox" 
+                       value="${i}">
                 Sum ${i}
             `;
             sumControls.appendChild(label);
@@ -189,6 +209,13 @@ document.addEventListener('DOMContentLoaded', () => {
         createChart(dataset, selectedDigits, selectedSums);
         modal.style.display = 'none';
     }
+
+    // Handle window resizing
+    window.addEventListener('resize', () => {
+        if (chart) {
+            chart.resize();
+        }
+    });
 
     // Initialize
     const dataset = generateDataset();
