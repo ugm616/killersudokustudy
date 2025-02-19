@@ -1,5 +1,5 @@
 /* Main layout and containers */
-main {
+.graph-main {
     max-width: 100%;
     margin: 0;
     padding: 0.25rem;
@@ -9,19 +9,14 @@ main {
     overflow: hidden;
 }
 
-h1 {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.25rem;
-    line-height: 1;
-}
-
-.content-container {
+.graph-content {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     padding: 0;
     overflow: hidden;
+    margin: 0;
 }
 
 /* Graph controls */
@@ -186,10 +181,6 @@ h1 {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     }
     
-    h1 {
-        font-size: 1.2rem;
-    }
-
     .view-selector button {
         padding: 0.2rem 0.5rem;
         font-size: 0.8rem;
