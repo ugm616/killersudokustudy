@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combination Graphs - Killer Sudoku Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="graphs.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="top-menu">
+        <div class="nav-content">
+            <a href="index.html">Cage Calculator</a>
+            <a href="about.html">About</a>
+            <a href="rules.html">Sudoku Rules</a>
+            <a href="combinations-chart.html">Combinations Chart</a>
+            <a href="combinations-graphs.html" class="active">Graphs</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Killer Sudoku Combination Graphs</h1>
+        
+        <div class="content-container">
+            <div class="graph-controls">
+                <div class="view-selector">
+                    <button id="showAllBtn" class="active">Show All Data</button>
+                    <button id="showCustomBtn">Custom Selection</button>
+                </div>
+
+                <div id="customControls" class="custom-controls" style="display: none;">
+                    <div class="control-section">
+                        <h3>Select by Digit Count</h3>
+                        <div class="checkbox-group" id="digitControls">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="control-section">
+                        <h3>Select by Sum Total</h3>
+                        <div class="checkbox-group" id="sumControls">
+                            <!-- Will be filled by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <canvas id="combinationsGraph"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <script src="graphs.js"></script>
+</body>
+</html>
