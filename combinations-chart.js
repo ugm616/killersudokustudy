@@ -32,32 +32,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generate table content
     function generateTable() {
         const tbody = table.querySelector('tbody');
+        const MAX_SUM = 45; // Set maximum sum to 45
         
-        // Calculate min and max sums for each digit count
-        const minMaxSums = {};
+        // Calculate min sums for each digit count
+        const minSums = {};
         for (let digits = 2; digits <= 9; digits++) {
-            const min = (digits * (digits + 1)) / 2; // Sum of first 'digits' numbers
-            const max = ((19 - digits) * digits) / 2 + 45; // Sum of last 'digits' numbers
-            minMaxSums[digits] = { min: Math.floor(min), max: Math.floor(max) };
+            // Sum of first 'digits' numbers (e.g., for 3 digits: 1+2+3)
+            minSums[digits] = (digits * (digits + 1)) / 2;
         }
 
-        // Find overall min and max
-        const minSum = Math.min(...Object.values(minMaxSums).map(x => x.min));
-        const maxSum = Math.max(...Object.values(minMaxSums).map(x => x.max));
-
-        // Generate rows
-        for (let sum = minSum; sum <= maxSum; sum++) {
+        // Generate rows from minimum possible sum (3 for 2 digits) to 45
+        for (let sum = 3; sum <= MAX_SUM; sum++) {
             const row = document.createElement('tr');
             const sumCell = document.createElement('td');
             sumCell.textContent = sum;
             row.appendChild(sumCell);
 
-            // Generate columns for each digit count
+            // Generate columns for each digit count (2 to 9)
             for (let digits = 2; digits <= 9; digits++) {
                 const cell = document.createElement('td');
-                const { min, max } = minMaxSums[digits];
-
-                if (sum >= min && sum <= max) {
+                
+                // Check if sum is possible with this many digits
+                if (sum >= minSums[digits] && sum <= MAX_SUM) {
                     const combinations = generateCombinations(digits, sum);
                     if (combinations.length > 0) {
                         const link = document.createElement('a');
