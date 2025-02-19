@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinations Chart - Killer Sudoku Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <nav class="top-menu">
+        <div class="nav-content">
+            <a href="index.html">Cage Calculator</a>
+            <a href="about.html">About</a>
+            <a href="rules.html">Sudoku Rules</a>
+            <a href="combinations-chart.html" class="active">Combinations Chart</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Killer Sudoku Combinations Chart</h1>
+        
+        <div class="content-container">
+            <div class="chart-container">
+                <table id="combinationsTable" class="combinations-table">
+                    <thead>
+                        <tr>
+                            <th>Sum</th>
+                            <th>2 Digits</th>
+                            <th>3 Digits</th>
+                            <th>4 Digits</th>
+                            <th>5 Digits</th>
+                            <th>6 Digits</th>
+                            <th>7 Digits</th>
+                            <th>8 Digits</th>
+                            <th>9 Digits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Will be filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="combinationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalTitle">Combinations</h2>
+            <div id="modalContent" class="modal-combinations">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="combinations-chart.js"></script>
+</body>
+</html>
